@@ -283,7 +283,8 @@ async def refresh_access_token(
         )
 
     result = await db.execute(
-        select(RefreshTokenModel).where(RefreshTokenModel.token == token_data.refresh_token)
+        select(RefreshTokenModel).where(
+            RefreshTokenModel.token == token_data.refresh_token)
     )
     refresh_token = result.scalars().first()
     if refresh_token is None:
