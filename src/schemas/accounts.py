@@ -21,7 +21,8 @@ class PasswordBaseSchema(BaseModel):
         return accounts_validators.validate_password_strength(value)
 
 
-class UserRegistrationRequestSchema(EmailBaseSchema, PasswordBaseSchema):
+class UserRegistrationRequestSchema(EmailBaseSchema,
+                                    PasswordBaseSchema):
     pass
 
 
